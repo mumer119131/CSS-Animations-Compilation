@@ -1,0 +1,54 @@
+
+
+.box{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent, #d400d4);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent, #00ffcc);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+.box span{
+    inset: 5px;
+    background: #0c1022;
+    position: absolute;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.box h2{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 10em;
+}
